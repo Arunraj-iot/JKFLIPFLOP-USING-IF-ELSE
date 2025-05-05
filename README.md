@@ -33,60 +33,48 @@ By using three variable K-Map, we can get the simplified expression for next sta
 The maximum possible groupings of adjacent ones are already shown in the figure. Therefore, the simplified expression for next state Qt+1t+1 is Q(t+1)=JQ(t)′+K′Q(t)Q(t+1)=JQ(t)′+K′Q(t)
 
 **Procedure**
-step-1 Go to quartus software.
 
-step-2 Set new environment.
+1.Open Quartus II and create a new project wizard.
 
-step-3 Type the code to implement SR flipflop using verilog and validating their functionality using their functional tables.
+2.Create a Verilog HDL file and enter the JK Flip-Flop code.
 
-step-4 Run the program.
+3.Save the file.
 
-step-5 Give inputs in the waveform table .
+4.Click Compile to check for errors and build the design.
 
-step-6 Run the program.
+5.Go to Tools > Netlist Viewers > RTL Viewer to view and save the RTL schematic.
+
+6.Create a Vector Waveform File (.vwf) via File > New > University Program VWF.
+
+7.Add input/output nodes using Node finder.
+
+8.Apply different input combinations (J, K, Clock) in the waveform.
+
+9.Run Simulation from Processing > Start Simulation.
+
+10.View and save the timing diagram showing the JK flip-flop behavior.
 
 **PROGRAM**
-```
-module JKFLIPFLOP(q, qb,j,k,clock,reset);
-    input j,k,clock,reset;
-    output reg q, qb;
-	 
-always @ (posedge (clock))
 
-    begin 
-        if (!reset)
-            begin
-               q <= q;
-               qb <=qb;
-            end   
-        
-else
-   begin
-	   if(j==0 && k==0)
-		   begin
-			q<=q;
-			qb<=qb;
-			end
-		else if(j!=k)
-		   begin
-			q<=j;
-			qb<=k;
-			end
-		else if(j==1 && k==1)
-		    begin
-			 q<=~q;
-			 qb<=~qb;
-			 end
-	end
-end	
-endmodule
-```
+![Screenshot 2025-05-05 141744](https://github.com/user-attachments/assets/3625e83d-e6d9-4824-b0df-258cce26be0e)
+
+
+Developed by: ARUNRAJ R
+RegisterNumber:212224110006
+
 **RTL LOGIC FOR FLIPFLOPS**
-![Screenshot 2024-12-20 105243](https://github.com/user-attachments/assets/c81a2484-d423-45d1-89cc-ae06158de0d2)
+
+
+![Screenshot 2025-05-05 141222](https://github.com/user-attachments/assets/57ddadad-96b6-4b8c-90ca-8c3f04ed3ac3)
+
+
 
 **TIMING DIGRAMS FOR FLIP FLOPS**
-![Screenshot 2024-12-20 105257](https://github.com/user-attachments/assets/bcf39d01-2ffe-492d-92de-e728589244b5)
+
+
+![Screenshot 2025-05-05 141236](https://github.com/user-attachments/assets/170ca1b9-c12e-4360-812e-9afa1a53b86b)
+
 
 
 **RESULTS**
-Thus,the code executed successfully.
+    JK flipflop using verilog and validating their functionality using their functional tables are verified.
